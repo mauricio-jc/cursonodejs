@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso node</title>
+  </head>
+  <body>
+    <h1>Livros</h1>
+    <a href="/books/create">Adicionar livro</a>
+    <hr>
+    
+    <table id="books" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Editar</th>
+          <th>Excluir</th>
+        </tr>
+      </thead>
+      <tbody>
+        <for |book| of=data.books>
+            <tr id="book_${book.id}">
+              <td>${book.id}</td>
+              <td>${book.title}</td>
+              <td>${book.price}</td>
+              <td>
+                <a href="/books/edit/${book.id}">Editar</a>
+              </td>
+              <td>
+                <a href="#" data-ref="${book.id}" data-type="remove">Excluir</a>
+              </td>
+            </tr>
+        </for>
+      </tbody>
+    </table>
+
+    <script src="/statics/js/remove.js"></script>
+  </body>
+</html>

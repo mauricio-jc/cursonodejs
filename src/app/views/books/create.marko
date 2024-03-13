@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso node</title>
+  </head>
+  <body>
+    <h1>Cadastrar livro</h1>
+    <a href="/books">Voltar</a>
+    <hr>
+    
+    <form action="/books/save" method="POST">
+      <div>
+        <label>Título: *</label>
+        <input type="text" name="title" required>
+      </div>
+      <div>
+        <label>Preço: *</label>
+        <input type="text" name="price" required>
+      </div>
+      <div>
+        <label>Descrição: *</label>
+        <textarea name="description" rows="5" cols="30" required></textarea>
+      </div>
+      <div>
+        <button type="submit">Salvar</button>
+      </div>
+    </form>
+  </body>
+</html>

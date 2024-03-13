@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso node</title>
+    </head>
+    <body>
+        <h1>Editar livro ${data.book.title}</h1>
+        <a href="/books">Voltar</a>
+        <hr>
+
+        <form action="/books/update" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="id" value="${data.book.id}">
+            <div>
+                <label>Título: *</label>
+                <input type="text" name="title" value="${data.book.title}" required>
+            </div>
+            <div>
+                <label>Preço: *</label>
+                <input type="text" name="price" value="${data.book.price}" required>
+            </div>
+            <div>
+                <label>Descrição: *</label>
+                <textarea name="description" rows="5" cols="30" required>${data.book.description}</textarea>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </body>
+</html>
